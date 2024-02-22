@@ -7,6 +7,11 @@ const conexion = new MongoClient(urlConexion);
 const bd = "dws";
 const coleccion = "alumnos";
 
+actualizar()
+  .catch(console.error)
+  .then(console.log)
+  .finally(() => console.close);
+
 const server = http.createServer();
 server.on("request", function (peticion, respuesta) {
   let urlCompleta = url.parse(peticion.url, true);
